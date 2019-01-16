@@ -34,4 +34,4 @@ ENV DOCKER_HOST unix:///tmp/docker.sock
 VOLUME ["/etc/nginx/certs", "/etc/nginx/dhparam"]
 
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
-CMD ["forego", "start", "-r"]
+CMD ["/bin/sh","-c","forego start -r"]
