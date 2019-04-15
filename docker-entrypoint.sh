@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+/sbin/ip route add 172.27.224.0/20 via 172.31.23.101
+/sbin/ip route add 192.168.89.0/24 via 172.31.23.1
+/sbin/ip route add 172.19.230.0/24 via 172.31.23.1
+/sbin/ip route add 172.26.155.0/24 via 172.31.23.1
+# Warn if the DOCKER_HOST socket does not exist
 # Warn if the DOCKER_HOST socket does not exist
 if [[ $DOCKER_HOST = unix://* ]]; then
 	socket_file=${DOCKER_HOST#unix://}
